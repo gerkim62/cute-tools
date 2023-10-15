@@ -78,10 +78,6 @@ import { SidebarItem } from "./SidebarItem";
   const [sidebarShowing, setSidebarShowing] = useState(false);
   let isLgScreen = useIsLgScreen();
 
-  useEffect(() => {
-    isLgScreen= window.matchMedia(`(min-width: ${LG_SCREEN_BREAKPOINT}px)`).matches
-  }
-  , []);
 
   return (
     <>
@@ -107,10 +103,11 @@ import { SidebarItem } from "./SidebarItem";
           onBackdropClick={() => {
             setSidebarShowing(false);
           }}
-          width={sidebarShowing || isLgScreen ? "270px" : "0"}
+          width={sidebarShowing ||isLgScreen ? "270px" : "0"}
+          // width="unset"
           toggled={false}
-          className="h-screen lg:h-[95vh] overflow-y-auto 
-          overflow-x-hidden bg-white lg:w-[270px]"
+          className={`h-screen lg:h-[95vh] overflow-y-auto 
+          overflow-x-hidden bg-white !lg:w-[270px] ${sidebarShowing ? "!w-[270px]" : "!w-[0]"}`}
         >
           <Menu>
             <MenuItem
