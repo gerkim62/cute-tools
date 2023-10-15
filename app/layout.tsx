@@ -1,11 +1,10 @@
-
 import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 
 import { Toaster } from "react-hot-toast";
 import Footer from "@/components/Footer";
-import { Sidebar } from "./Sidebar";
+import Sidebar from "@/components/Sidebar";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -32,7 +31,7 @@ export default function RootLayout({
             className="relative z-5 flex-1 flex-grow min"
             style={{ minHeight: "calc(100vh - 270px)" }}
           >
-            <Toaster/>
+            <Toaster />
             {children}
           </div>
         </div>

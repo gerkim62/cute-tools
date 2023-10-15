@@ -6,7 +6,7 @@ export default function Home() {
   // Define an array of tools data
   const toolsData = [
     {
-      title: "Cute class Timetable",
+      title: "Cute Timetable",
       description:
         "Easily download and manage your class Timetable using the cute timetable app.",
       link: "/cute-timetable",
@@ -18,7 +18,7 @@ export default function Home() {
       link: "/exam-timetable",
     },
     {
-      title: "Easy Courses Selector",
+      title: "Courses Selector",
       description:
         "Automatically chooses your courses without having to deal with clashing courses. You can choose which lecturers to avoid as well as which time you prefer.",
       link: "/courses-selector",
@@ -29,9 +29,9 @@ export default function Home() {
   return (
     <main className="text-black flex flex-col justify-center items-center pt-10">
       <div className="text-center w-[90%]">
-        <h1 className="text-2xl font-semibold mb-4">UEAB Tools App</h1>
+        <h1 className="text-2xl font-semibold mb-4">Cute Tools</h1>
         <p className="text-lg mb-3">
-          Explore a set of UEAB Tools made just for You! <br />
+          Explore a set of Cute Tools made just for You! <br />
           <span className="font-extrabold p-1 pr-0 border-pink-600 rounded-lg text-center overflow-hidden">
             <span className="text-xs text-pink-600">by</span>{" "}
             <span className="font-semibold font-mono mb-2">
