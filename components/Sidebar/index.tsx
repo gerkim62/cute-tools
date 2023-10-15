@@ -76,7 +76,26 @@ import { SidebarItem } from "./SidebarItem";
   ];
 
   const [sidebarShowing, setSidebarShowing] = useState(false);
-  let isLgScreen = useIsLgScreen();
+  let [isLgScreen, setIsLgScreen] = useState(false);
+
+  useEffect(() => {
+    setIsLgScreen( window.matchMedia(`(min-width: ${LG_SCREEN_BREAKPOINT}px)`).matches)
+
+    const mediaQuery = window?.matchMedia(
+      `(min-width: ${LG_SCREEN_BREAKPOINT}px)`
+    );
+
+    const handleMediaChange = (e: MediaQueryListEvent) => {
+      setIsLgScreen(e.matches);
+    };
+
+    mediaQuery.addEventListener("change", handleMediaChange);
+
+    // Clean up the event listener when the component unmounts
+    return () => {
+      mediaQuery.removeEventListener("change", handleMediaChange);
+    };
+  }, []);
 
 
   return (
