@@ -28,7 +28,7 @@ export default function Home() {
 
   return (
     <main className="text-black flex flex-col justify-center items-center pt-10">
-      <div className="text-center">
+      <div className="text-center w-[80%]">
         <h1 className="text-2xl font-semibold mb-4">UEAB Tools App</h1>
         <p className="text-lg mb-3">
           Explore a set of UEAB Tools made just for You! <br />
