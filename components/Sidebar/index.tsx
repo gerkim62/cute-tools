@@ -117,7 +117,7 @@ import { SidebarItem } from "./SidebarItem";
 
       <div style={{ zIndex: 100 }} className="lg:relative z-10 w-[270px] hidden lg:block"></div>
 
-      <div style={{ zIndex: 100 }} className="fixed z-10 bottom-0 lg-w-[270px]">
+      <div style={{ zIndex: 100 }} className="fixed z-10 lg:bottom-0 lg-w-[270px]">
         <ProSidebar
           onBackdropClick={() => {
             setSidebarShowing(false);
