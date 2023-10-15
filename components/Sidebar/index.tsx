@@ -84,18 +84,20 @@ import { SidebarItem } from "./SidebarItem";
         // overlay div
         <div
           onClick={() => setSidebarShowing(false)}
-          className="w-full h-full absolute bg-gray-500/50 z-50 lg:hidden"
+          className="w-full h-full fixed bg-gray-500/50 z-50 lg:hidden"
         ></div>
       )}
       <button
         style={{ zIndex: 100 }}
-        className="fixed right-2 top-2 z-10 border-2 p-1 lg:hidden"
+        className="fixed left-4 top-2 z-10 border-2 p-1 lg:hidden"
         onClick={() => setSidebarShowing((prev) => !prev)}
       >
         {sidebarShowing ? <FaTimes size={30} /> : <FaBars size={30} />}
       </button>
 
-      <div style={{ zIndex: 100 }} className="fixed z-10 lg:relative">
+      <div style={{ zIndex: 100 }} className="lg:relative z-10 w-[270px] hidden lg:block"></div>
+
+      <div style={{ zIndex: 100 }} className="fixed z-10 bottom-0 lg-w-[270px]">
         <ProSidebar
           onBackdropClick={() => {
             setSidebarShowing(false);
