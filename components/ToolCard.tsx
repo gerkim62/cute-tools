@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { FaArrowAltCircleRight, FaArrowRight } from "react-icons/fa";
 
 type ToolCardProps = {
   title: string;
@@ -14,9 +15,9 @@ export default function ToolCard({ title, description, link }: ToolCardProps) {
 
       <Link
         href={link}
-        className="text-pink-600 hover:underline hover:text-pink-700 font-semibold transition duration-300"
+        className="text-pink-600 hover:underline hover:text-pink-700 font-semibold transition duration-300 mt-5"
       >
-        Launch {title}
+        Open {title} <FaArrowRight className="inline" />
       </Link>
     </div>
   );
