@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Sidebar as ProSidebar, Menu, MenuItem } from "react-pro-sidebar";
 import {
   FaUser,
@@ -76,7 +76,12 @@ import { SidebarItem } from "./SidebarItem";
   ];
 
   const [sidebarShowing, setSidebarShowing] = useState(false);
-  const isLgScreen = useIsLgScreen();
+  let isLgScreen = useIsLgScreen();
+
+  useEffect(() => {
+    isLgScreen= useIsLgScreen();
+  }
+  , []);
 
   return (
     <>
