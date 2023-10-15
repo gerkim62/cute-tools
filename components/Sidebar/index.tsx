@@ -16,7 +16,7 @@ import {
 } from "react-icons/fa";
 import React from "react";
 import Link from "next/link";
-import useIsLgScreen from "@/hooks/useIsLgScreen";
+import useIsLgScreen, { LG_SCREEN_BREAKPOINT } from "@/hooks/useIsLgScreen";
 import Logo from "@/components/Logo";
 import { Url } from "url";
 import { SidebarItem } from "./SidebarItem";
@@ -79,7 +79,7 @@ import { SidebarItem } from "./SidebarItem";
   let isLgScreen = useIsLgScreen();
 
   useEffect(() => {
-    isLgScreen= useIsLgScreen();
+    isLgScreen= window.matchMedia(`(min-width: ${LG_SCREEN_BREAKPOINT}px)`).matches
   }
   , []);
 

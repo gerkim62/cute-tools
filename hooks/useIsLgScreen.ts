@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
 // Define your large screen breakpoint (you can adjust this as needed)
-const LG_SCREEN_BREAKPOINT = 1024;
+export const LG_SCREEN_BREAKPOINT = 1024;
 
 const useIsLgScreen = () => {
   if (typeof window === "undefined") return true;
