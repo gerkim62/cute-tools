@@ -115,6 +115,8 @@ import { SidebarItem } from "./SidebarItem";
         {sidebarShowing ? <FaTimes size={30} /> : <FaBars size={30} />}
       </button>
 
+      <Logo className="z-[100] lg:hidden fixed right-4 top-2" />
+
       <div style={{ zIndex: 100 }} className="lg:relative z-10 w-[270px] hidden lg:block"></div>
 
       <div style={{ zIndex: 100 }} className="fixed z-10 lg:bottom-0 lg-w-[270px]">
