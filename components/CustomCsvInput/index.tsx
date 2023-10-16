@@ -31,18 +31,18 @@ const CustomFileInput: React.FC<CustomFileInputProps> = ({
 
     if (!file) {
       console.error("No file selected.");
-      toast.error("No file selected.", {});
+      // toast.error("No file selected.", {});
       setErrorMessage("No file selected.");
     } else if (fileType && !file.name.endsWith(`.${fileType}`)) {
       console.error(`Only ${fileType} files are allowed`);
-      toast.error(`Only ${fileType} files are allowed`, {});
+      // toast.error(`Only ${fileType} files are allowed`, {});
       setErrorMessage(`Only ${fileType} files are allowed`);
     } else {
       try {
         const csvString = await getCSVStringFrom(file);
         console.log(csvString);
         if (!csvString.startsWith(expectedHeader)) {
-          toast.error(`That CSV is missing required data!`, {});
+          // toast.error(`That CSV is missing required data!`, {});
           setErrorMessage(`That CSV is missing required data!`);
           return;
         }
@@ -52,7 +52,7 @@ const CustomFileInput: React.FC<CustomFileInputProps> = ({
       } catch (error) {
         console.error(error);
         setErrorMessage("Error parsing CSV, please try again.");
-        toast.error("Error parsing CSV, please try again.", {});
+        // toast.error("Error parsing CSV, please try again.", {});
       }
     }
   };
