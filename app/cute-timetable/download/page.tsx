@@ -3,13 +3,13 @@ import React from "react";
 
 const CuteTimetableTutorial = () => {
   return (
-    <div className="bg-white text-gray-700 py-10 px-4">
+    <div className="bg-white text-gray-700 py-10 px-4 mt-10">
       <div className="max-w-md mx-auto">
-        <h1 className="text-xl text-center font-semibold text-pink-600 mb-6">
+        <h1 className="text-xl text-center font-semibold text-pink-600 -mb-2">
           How to Get Your Timetable CSV
         </h1>
 
-        <div className="bg-white rounded-lg p-6 shadow-md text-left mb-8">
+        <div className="bg-white rounded-lg p-6 text-left mb-8">
           <p className="text-gray-600 mb-4">
             Follow these simple steps to access your timetable CSV file:
           </p>
