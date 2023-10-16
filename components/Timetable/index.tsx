@@ -29,6 +29,16 @@ type Props = {
   updateUrlLabel?: string;
 };
 
+const DAYS_ABBREV = {
+  Mo: 'Monday',
+  Tu: 'Tuesday',
+  We: 'Wednesday',
+  Th: 'Thursday',
+  Fr: 'Friday',
+  Sa: 'Saturday',
+  Su: 'Sunday',
+};
+
 const Timetable = ({
   courses,
   // title,
@@ -69,7 +79,8 @@ const Timetable = ({
       >
         <table
           className={
-            "mx-auto sm:rotate-0" + (fullscreen ? " rotate-90 overflow-hidden" : " rotate-0")
+            "mx-auto sm:rotate-0" +
+            (fullscreen ? " rotate-90 overflow-hidden" : " rotate-0")
           }
         >
           {/* add the title or caption eg Gerison's timetable */}
@@ -117,7 +128,7 @@ const Timetable = ({
                 <tr key={day}>
                   {/* the first th is the day name eg Mon */}
                   <th key={day} className="day font-mono">
-                    {day}
+                    {DAYS_ABBREV[day] ? DAYS_ABBREV[day] : day}{" "}
                   </th>
 
                   {/* the rest tds are equal to number of timestamps, will hold the courses */}
