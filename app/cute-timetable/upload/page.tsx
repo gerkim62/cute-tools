@@ -38,10 +38,10 @@ const CsvTimetableUploader = () => {
     setUploading(false);
   };
 
-  console.log(errorMessage)
+  console.log(errorMessage);
 
   return (
-    <div className="flex flex-col items-center justify-center my-10 min-h-[50vh] text-center">
+    <div className="flex flex-col items-center justify-center my-10 min-h-[50vh] text-center mt-10">
       <h1 className="text-2xl font-semibold mb-4 text-pink-600">
         Upload Your CSV Timetable
       </h1>
@@ -75,7 +75,7 @@ const CsvTimetableUploader = () => {
             : "bg-gray-300 cursor-not-allowed text-gray-500"
         }`}
         onClick={handleUpload}
-        disabled={(!selectedCsvString || uploading) } // Disable the button when uploading
+        disabled={!selectedCsvString || uploading} // Disable the button when uploading
       >
         {uploading
           ? "Uploading..."
