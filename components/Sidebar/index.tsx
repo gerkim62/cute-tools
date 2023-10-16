@@ -13,6 +13,7 @@ import {
   FaListUl,
   FaFileDownload,
   FaSearch,
+  FaFileUpload,
 } from "react-icons/fa";
 import React from "react";
 import Link from "next/link";
@@ -41,8 +42,8 @@ import { SidebarItem } from "./SidebarItem";
       items: [
         {
           label: "Create timetable",
-          path: "/cute-timetable",
-          icon: FaFileDownload,
+          path: "/cute-timetable/upload",
+          icon: FaFileUpload,
         },
         {
           label: "View timetable",
