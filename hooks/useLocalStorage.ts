@@ -7,6 +7,10 @@ const useLocalStorage = <T>(
   key: string,
   defaultValue: T | (() => T)
 ): [T, Dispatch<SetStateAction<T>>] => {
+if(typeof window === 'undefined') {
+    return [defaultValue as T, () => null];
+}
+
   // Create state variable to store localStorage value in state
   const [localStorageValue, setLocalStorageValue] = useState<T>(() => {
     try {
@@ -16,13 +20,15 @@ const useLocalStorage = <T>(
       if (value) {
         return JSON.parse(value);
       } else {
-        const defaultValueFn = defaultValue instanceof Function ? defaultValue : () => defaultValue;
+        const defaultValueFn =
+          defaultValue instanceof Function ? defaultValue : () => defaultValue;
         const initialValue = defaultValueFn();
         localStorage.setItem(key, JSON.stringify(initialValue));
         return initialValue;
       }
     } catch (error) {
-      const defaultValueFn = defaultValue instanceof Function ? defaultValue : () => defaultValue;
+      const defaultValueFn =
+        defaultValue instanceof Function ? defaultValue : () => defaultValue;
       const initialValue = defaultValueFn();
       localStorage.setItem(key, JSON.stringify(initialValue));
       return initialValue;
@@ -30,18 +36,19 @@ const useLocalStorage = <T>(
   });
 
   // This method updates our localStorage and our state
-const setLocalStorageStateValue: Dispatch<SetStateAction<T>> = (valueOrFn) => {
+  const setLocalStorageStateValue: Dispatch<SetStateAction<T>> = (
+    valueOrFn
+  ) => {
     let newValue: T;
     if (typeof valueOrFn === "function") {
-        const fn = valueOrFn as (prevState: T) => T;
-        newValue = fn(localStorageValue);
+      const fn = valueOrFn as (prevState: T) => T;
+      newValue = fn(localStorageValue);
     } else {
-        newValue = valueOrFn;
+      newValue = valueOrFn;
     }
     localStorage.setItem(key, JSON.stringify(newValue));
     setLocalStorageValue(newValue);
-};
-
+  };
 
   return [localStorageValue, setLocalStorageStateValue];
 };
