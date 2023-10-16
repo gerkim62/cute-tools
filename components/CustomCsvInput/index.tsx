@@ -34,7 +34,8 @@ const CustomFileInput: React.FC<CustomFileInputProps> = ({
       handleInput(csvString)
       } catch (error) {
         console.error(error);
-        toast.error(error.message, {});
+        //todo:fix this
+        // toast.error(error.message, {});
       }
     }
   };
