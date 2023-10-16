@@ -4,13 +4,15 @@ import { FaUser, FaComments, FaWhatsapp, FaPaperPlane } from "react-icons/fa";
 async function suggestionsFormAction(data:FormData){
   "use server"
   console.log(data)
-  const formDataObject = {};
-for (const [key, value] of data.entries()) {
-  formDataObject[key] = value;
-}
+  const formDataObject:{ [key: string]: string } = {};
 
-console.log(formDataObject)
+  for (let pair of data.entries()) {
+    const key = pair[0];
+    const value = pair[1];
+    formDataObject[key] = typeof value === 'string' ? value : '';
+  }
 
+  console.log(formDataObject)
 }
 
 function Suggestion() {
