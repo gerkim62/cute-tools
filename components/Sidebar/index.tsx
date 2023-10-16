@@ -145,7 +145,7 @@ const Sidebar = () => {
           // width="unset"
           toggled={false}
           className={`h-screen lg:h-[95vh] overflow-y-auto 
-          overflow-x-hidden bg-white !lg:w-[270px] ${
+          overflow-x-hidden bg-white !lg:w-[270px]  ${
             sidebarShowing ? "!w-[270px]" : "!w-[0]"
           }`}
         >

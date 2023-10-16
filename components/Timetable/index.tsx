@@ -69,7 +69,7 @@ const Timetable = ({
       >
         <table
           className={
-            "mx-auto sm:rotate-0" + (fullscreen ? " rotate-90" : " rotate-0")
+            "mx-auto sm:rotate-0" + (fullscreen ? " rotate-90 overflow-hidden" : " rotate-0")
           }
         >
           {/* add the title or caption eg Gerison's timetable */}
