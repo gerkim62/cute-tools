@@ -115,7 +115,7 @@ import { SidebarItem } from "./SidebarItem";
         {sidebarShowing ? <FaTimes size={30} /> : <FaBars size={30} />}
       </button>
 
-      <div className="w-screen h-[60px] fixed top-0 z-[49] backdrop-blur-md shadow-sm"></div>
+      <div className="w-screen h-[60px] fixed top-0 z-[49] backdrop-blur-sm shadow-sm"></div>
      
 
       <Link href={"/"} className="z-[100] lg:hidden fixed right-4 top-4 text-lg font-bold " >Cute Tools</Link>
