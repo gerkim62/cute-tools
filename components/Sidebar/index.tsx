@@ -22,7 +22,7 @@ import Logo from "@/components/Logo";
 import { Url } from "url";
 import { SidebarItem } from "./SidebarItem";
 
- const Sidebar = () => {
+const Sidebar = () => {
   const sidebarItems: SidebarItem[] = [
     {
       label: "Courses Selector",
@@ -80,7 +80,9 @@ import { SidebarItem } from "./SidebarItem";
   let [isLgScreen, setIsLgScreen] = useState(false);
 
   useEffect(() => {
-    setIsLgScreen( window.matchMedia(`(min-width: ${LG_SCREEN_BREAKPOINT}px)`).matches)
+    setIsLgScreen(
+      window.matchMedia(`(min-width: ${LG_SCREEN_BREAKPOINT}px)`).matches
+    );
 
     const mediaQuery = window?.matchMedia(
       `(min-width: ${LG_SCREEN_BREAKPOINT}px)`
@@ -97,7 +99,6 @@ import { SidebarItem } from "./SidebarItem";
       mediaQuery.removeEventListener("change", handleMediaChange);
     };
   }, []);
-
 
   return (
     <>
@@ -117,22 +118,36 @@ import { SidebarItem } from "./SidebarItem";
       </button>
 
       <div className="w-screen h-[60px] fixed top-0 z-[49] backdrop-blur-sm shadow-sm"></div>
-     
 
-      <Link href={"/"} className="z-[100] lg:hidden fixed right-4 top-4 text-lg font-bold " >Cute Tools</Link>
+      <Link
+        href={"/"}
+        className="z-[100] lg:hidden fixed right-4 top-4 text-lg font-bold "
+      >
+        Cute Tools
+      </Link>
 
-      <div style={{ zIndex: 100 }} className="lg:relative z-10 w-[270px] hidden lg:block"></div>
+      <div
+        style={{ zIndex: 100 }}
+        className="lg:relative z-10 w-[270px] hidden lg:block"
+      ></div>
 
-      <div style={{ zIndex: 100 }} className="fixed z-10 lg:bottom-0 lg-w-[270px]">
+      <div
+        style={{ zIndex: 100 }}
+        className={`fixed z-10 lg:bottom-0 lg-w-[270px] ${
+          !isLgScreen && !sidebarShowing ? "bg-transparent" : ""
+        }`}
+      >
         <ProSidebar
           onBackdropClick={() => {
             setSidebarShowing(false);
           }}
-          width={sidebarShowing ||isLgScreen ? "270px" : "0"}
+          width={sidebarShowing || isLgScreen ? "270px" : "0"}
           // width="unset"
           toggled={false}
           className={`h-screen lg:h-[95vh] overflow-y-auto 
-          overflow-x-hidden bg-white !lg:w-[270px] ${sidebarShowing ? "!w-[270px]" : "!w-[0]"}`}
+          overflow-x-hidden bg-white !lg:w-[270px] ${
+            sidebarShowing ? "!w-[270px]" : "!w-[0]"
+          }`}
         >
           <Menu>
             <MenuItem
