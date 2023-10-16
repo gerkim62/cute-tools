@@ -120,7 +120,7 @@ const UpdateExamTimetable = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center my-10 mt-20 min-h-[50vh]">
+    <div className="flex flex-col items-center justify-center my-10 mt-20 min-h-[50vh] max-w-[90%]">
       <h1 className="text-2xl font-semibold mb-4 text-pink-600">
         Upload Updated Exam Timetable
       </h1>
