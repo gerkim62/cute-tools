@@ -5,7 +5,7 @@ const CuteTimetableTutorial = () => {
   return (
     <div className="bg-white text-gray-700 py-10 px-4 mt-10">
       <div className="max-w-md mx-auto">
-        <h1 className="text-xl text-center font-semibold text-pink-600 -mb-2">
+        <h1 className="text-xl text-center font-semibold text-gray-700 -mb-2">
           How to Get Your Timetable CSV
         </h1>
 
