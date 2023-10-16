@@ -121,7 +121,7 @@ const UpdateExamTimetable = () => {
 
   return (
     <div className="flex flex-col items-center justify-center my-10 mt-20 min-h-[50vh] max-w-[95%] mx-auto">
-      <h1 className="text-2xl font-semibold mb-4 text-pink-600">
+      <h1 className="text-xl font-semibold mb-4 text-pink-600">
         Upload Updated Exam Timetable
       </h1>
 
@@ -148,7 +148,7 @@ const UpdateExamTimetable = () => {
       >
         Upload the converted file here
       </label>
-      <div className="flex items-center border rounded-lg overflow-hidden mb-5 max-w-[80%]">
+      <div className="flex items-center border rounded-lg overflow-hidden mb-5 ">
         <label
           htmlFor="fileInput"
           className="px-4 py-2 bg-pink-500 text-white cursor-pointer whitespace-nowrap hover:bg-pink-600"
@@ -195,7 +195,7 @@ const UpdateExamTimetable = () => {
 
       <Link
         href="/exam-timetable"
-        className="underline mt-10 text-pink-600 hover:underline hover:text-pink-700 capitalize font-semibold transition duration-300"
+        className="underline mt-5 text-pink-600 hover:underline hover:text-pink-700 capitalize font-semibold transition duration-300"
       >
         Looking to extract timetable instead?
       </Link>
