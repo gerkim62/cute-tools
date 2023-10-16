@@ -27,9 +27,9 @@ export default function Home() {
   ];
 
   return (
-    <main className="text-black flex flex-col justify-center items-center pt-10">
+    <main className="text-black flex flex-col justify-center items-center pt-10 mt-8">
       <div className="text-center w-[90%]">
-        <h1 className="text-2xl font-semibold mb-4">Cute Tools</h1>
+        {/* <h1 className="text-2xl font-semibold mb-4">Welcome...</h1> */}
         <p className="text-lg mb-3">
           Explore a set of Cute Tools made just for You! <br />
           <span className="font-extrabold p-1 pr-0 border-pink-600 rounded-lg text-center overflow-hidden">

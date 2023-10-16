@@ -5,7 +5,7 @@ import Image from 'next/image';
 
 const AboutMe = () => {
   return (
-    <section className="bg-white min-h-full flex flex-col justify-center py-12 px-4 md:px-12 lg:px-24 xl:px-32 2xl:px-48 text-center">
+    <section className="bg-white min-h-full flex flex-col justify-center py-12 px-4 md:px-12 lg:px-24 xl:px-32 2xl:px-48 text-center mt-5">
       
       <div className="max-w-screen-lg mx-auto flex flex-col lg:flex-row items-center justify-center space-y-6 lg:space-y-0">
         <div className="relative flex-shrink-0 w-40 h-40 lg:w-48 lg:h-48">

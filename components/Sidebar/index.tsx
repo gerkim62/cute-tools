@@ -109,13 +109,16 @@ import { SidebarItem } from "./SidebarItem";
       )}
       <button
         style={{ zIndex: 100 }}
-        className="fixed left-4 top-2 z-10 border-2 p-1 lg:hidden backdrop-blur-lg"
+        className="fixed left-4 top-2 z-10 border-2 p-1 lg:hidden"
         onClick={() => setSidebarShowing((prev) => !prev)}
       >
         {sidebarShowing ? <FaTimes size={30} /> : <FaBars size={30} />}
       </button>
 
-      <Link href={"/"} className="z-[100] lg:hidden fixed right-4 top-4 text-lg font-bold backdrop-blur-lg" >Cute Tools</Link>
+      <div className="w-screen h-[60px] fixed top-0 z-[49] backdrop-blur-md shadow-sm"></div>
+     
+
+      <Link href={"/"} className="z-[100] lg:hidden fixed right-4 top-4 text-lg font-bold " >Cute Tools</Link>
 
       <div style={{ zIndex: 100 }} className="lg:relative z-10 w-[270px] hidden lg:block"></div>
 
