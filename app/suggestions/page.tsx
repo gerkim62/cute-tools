@@ -18,9 +18,9 @@ async function suggestionsFormAction(data:FormData){
 function Suggestion() {
   return (
     <div className="p-6 rounded-lg max-w-lg lg:max-w-lg mx-auto min-h-full flex flex-col mt-14 items-center">
-      <div className="text-center mb-6 flex flex-col items-center">
+      <div className="text-center mb-6 flex flex-col items-center ">
         <FaUser className="text-pink-500 text-5xl mb-2 border rounded-full border-pink-100" />
-        <h2 className="text-xl font-semibold">Provide Your Suggestion</h2>
+        <h2 className="text-xl font-semibold text-ellipsis whitespace-nowrap">Provide Your Suggestion</h2>
         <p className="text-sm font-mono mt-2 text-gray-500 tracking-wide px-5">
           I am always looking for ways to improve UEAB tools App. If you have
           any suggestions, please let me know.
@@ -28,7 +28,7 @@ function Suggestion() {
       </div>
       <form action={suggestionsFormAction} className="w-full flex items-center flex-col">
         <div className="mb-4 w-[80%]">
-          <label className='ml-6' htmlFor="name">Your Name</label>
+          <label className='ml-6 whitespace-nowrap' htmlFor="name">Your Name</label>
           <div className="flex items-center">
             <FaUser className="text-pink-500 text-lg mr-2" />
             <input
@@ -42,7 +42,7 @@ function Suggestion() {
         </div>
         
         <div className="mb-4 w-[80%]">
-          <label className="ml-6" htmlFor="whatsapp">WhatsApp Number</label>
+          <label className="ml-6 whitespace-nowrap" htmlFor="whatsapp">WhatsApp Number</label>
           <div className="flex items-center">
             <FaWhatsapp className="text-pink-500 text-lg mr-2" />
             <input
@@ -56,7 +56,7 @@ function Suggestion() {
         </div>
 
         <div className="mb-4 w-[80%]">
-          <label className="ml-6" htmlFor="suggestion">Your Suggestion</label>
+          <label className="ml-6 whitespace-nowrap" htmlFor="suggestion">Your Suggestion</label>
           <div className="flex items-center">
             <FaComments className="text-pink-500 text-lg mr-2" />
             <textarea
