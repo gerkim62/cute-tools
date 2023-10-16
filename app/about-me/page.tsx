@@ -34,7 +34,7 @@ const AboutMe = () => {
           </div>
           <div className="bg-pink-000 p-4 rounded-lg mt-6 text-gray-800">
             <h2 className="text-lg font-semibold mb-2 underline underline-offset-1 mx-5">About Me</h2>
-            <p className="text-sm lg:text-base tracking-wide mx-1 sm:mx-5 leading-6	">
+            <p className="text-sm lg:text-base tracking-wide mx-1 sm:mx-5 leading-6	text-left">
               I specialize in front-end web development with a focus on creating responsive and user-friendly interfaces. My tech stack includes HTML5, CSS3, JavaScript, React, NextJS, TailwindCSS and Bootstrap. I also have experience with server-side development using Node.js, ExpressJS and MongoDB for database management. My goal is to build innovative and efficient web applications that deliver exceptional user experiences.
             </p>
           </div>
