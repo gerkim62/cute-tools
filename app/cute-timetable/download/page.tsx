@@ -42,7 +42,7 @@ const CuteTimetableTutorial = () => {
             <p className="text-gray-600 font-semibold mb-4">
               3. Go back to Upload
             </p>
-            <Link href="/cute-timetable" className="text-pink-600 hover:underline font-semibold block mb-2">
+            <Link href="/cute-timetable/upload" className="text-pink-600 hover:underline font-semibold block mb-2">
               Click here to go back to the upload page
             </Link>
             <p>

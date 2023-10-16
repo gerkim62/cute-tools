@@ -4,18 +4,26 @@ import { useState } from "react";
 import { getCSVStringFrom } from "./helpers";
 
 interface CustomFileInputProps {
-  handleInput: (csvString:string) => void;
+  handleInput: (csvString: string) => void;
   fileType: "csv";
+  expectedHeader: string;
+  setErrorMessage?: (message: string) => void;
 }
 
-
 const CustomFileInput: React.FC<CustomFileInputProps> = ({
-   handleInput,
+  handleInput,
   fileType,
+  expectedHeader,
+  setErrorMessage = () => {},
 }) => {
+  
   const [selectedFileName, setSelectedFileName] = useState<string | null>(null);
-  const handleFileChange = async (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleFileChange = async (
+    event: React.ChangeEvent<HTMLInputElement>
+  ) => {
     const file = event.target.files?.[0];
+
+    
 
     if (file) {
       setSelectedFileName(file.name);
@@ -24,18 +32,27 @@ const CustomFileInput: React.FC<CustomFileInputProps> = ({
     if (!file) {
       console.error("No file selected.");
       toast.error("No file selected.", {});
+      setErrorMessage("No file selected.");
     } else if (fileType && !file.name.endsWith(`.${fileType}`)) {
       console.error(`Only ${fileType} files are allowed`);
       toast.error(`Only ${fileType} files are allowed`, {});
+      setErrorMessage(`Only ${fileType} files are allowed`);
     } else {
       try {
-      const csvString =await  getCSVStringFrom(file);
-      console.log(csvString);
-      handleInput(csvString)
+        const csvString = await getCSVStringFrom(file);
+        console.log(csvString);
+        if (!csvString.startsWith(expectedHeader)) {
+          toast.error(`That CSV is missing required data!`, {});
+          setErrorMessage(`That CSV is missing required data!`);
+          return;
+        }
+        toast.success(`Success!`, {});
+        handleInput(csvString);
+        setErrorMessage("");
       } catch (error) {
         console.error(error);
-        //todo:fix this
-        // toast.error(error.message, {});
+        setErrorMessage("Error parsing CSV, please try again.");
+        toast.error("Error parsing CSV, please try again.", {});
       }
     }
   };
