@@ -30,13 +30,13 @@ type Props = {
 };
 
 const DAYS_ABBREV = {
-  Mo: 'Monday',
-  Tu: 'Tuesday',
-  We: 'Wednesday',
-  Th: 'Thursday',
-  Fr: 'Friday',
-  Sa: 'Saturday',
-  Su: 'Sunday',
+  Mo: "Monday",
+  Tu: "Tuesday",
+  We: "Wednesday",
+  Th: "Thursday",
+  Fr: "Friday",
+  Sa: "Saturday",
+  Su: "Sunday",
 };
 
 const Timetable = ({
@@ -128,7 +128,7 @@ const Timetable = ({
                 <tr key={day}>
                   {/* the first th is the day name eg Mon */}
                   <th key={day} className="day font-mono">
-                    {DAYS_ABBREV[day] ? DAYS_ABBREV[day] : day}{" "}
+                    {DAYS_ABBREV[day as keyof typeof DAYS_ABBREV] ?? day}{" "}
                   </th>
 
                   {/* the rest tds are equal to number of timestamps, will hold the courses */}
