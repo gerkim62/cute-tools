@@ -1,11 +1,16 @@
 "use client"
 
 import Loading from "@/components/Loading";
+import useLocalStorage from "@/hooks/useLocalStorage";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
 const CuteTimetablePage = () => {
-const [timetableExists, setTimetableExists] = useState(false);
+  const [timetableCsv, setTimetableCsv] = useLocalStorage<string | null>(
+    "timetableCsv",
+    ""
+  );
+const [timetableExists, setTimetableExists] = useState(()=>!!timetableCsv);
 const router = useRouter();
 
 useEffect(() => {

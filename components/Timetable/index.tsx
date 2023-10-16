@@ -243,7 +243,7 @@ const Timetable = ({
           console.log(option);
           setPrefferedCoursesIdentifier((option as any).value);
         }}
-        className="sm:max-w-md max-w-[80%] mx-auto"
+        className="sm:max-w-md max-w-[90%] mx-auto"
       />
     </>
   );
