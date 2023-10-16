@@ -41,7 +41,7 @@ const CsvTimetableUploader = () => {
   console.log(errorMessage);
 
   return (
-    <div className="flex flex-col items-center justify-center my-10 min-h-[50vh] text-center mt-10">
+    <div className="flex flex-col items-center justify-center my-10 min-h-[50vh] text-center mt-20">
       <h1 className="text-2xl font-semibold mb-4 text-pink-600">
         Upload Your CSV Timetable
       </h1>

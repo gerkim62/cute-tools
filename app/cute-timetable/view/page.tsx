@@ -50,7 +50,7 @@ const CuteTimetablePage = () => {
         setShowingPropertiesFor={setShowingPropertiesFor}
         showingPropertiesFor={showingPropertiesFor}
         courses={courses}
-        updateUrl="/cute-timetable"
+        updateUrl="/cute-timetable/upload"
         updateUrlLabel="Update Timetable"
       />
 
